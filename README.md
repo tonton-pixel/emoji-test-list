@@ -48,6 +48,19 @@ console.log ("Keyboard Emoji Count:", keyboardCount);
 // -> "Keyboard Emoji Count: 2789
 ```
 
+### Getting the name and code(s) of a given emoji
+
+```javascript
+const emojiList = require ('emoji-test-list');
+const emoji = "👩‍❤️‍💋‍👨";
+console.log ("Emoji:", emoji);
+// -> 👩‍❤️‍💋‍👨
+console.log ("Name:", emojiList[emoji].name);
+// -> Name: kiss: woman, man
+console.log ("Code:", emojiList[emoji].code);
+// -> Code: 1F469 200D 2764 FE0F 200D 1F48B 200D 1F468
+```
+
 ## License
 
 The MIT License (MIT).

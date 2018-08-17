@@ -54,7 +54,7 @@ console.log ("Keyboard Emoji Count:", keyboardCount);
 const emojiList = require ('emoji-test-list');
 const emoji = "👩‍❤️‍💋‍👨";
 console.log ("Emoji:", emoji);
-// -> 👩‍❤️‍💋‍👨
+// -> Emoji: 👩‍❤️‍💋‍👨
 console.log ("Name:", emojiList[emoji].name);
 // -> Name: kiss: woman, man
 console.log ("Code:", emojiList[emoji].code);

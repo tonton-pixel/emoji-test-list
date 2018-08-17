@@ -1,0 +1,28 @@
+{
+  "name": "emoji-test-list",
+  "version": "11.0.0",
+  "description": "Get emoji list from Unicode test data file",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonton-pixel/emoji-test-list.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tonton-pixel/emoji-test-list/issues"
+  },
+  "homepage": "https://github.com/tonton-pixel/emoji-test-list",
+  "keywords": [
+    "emoji",
+    "test",
+    "list",
+    "code",
+    "name",
+    "fully-qualified",
+    "non-fully-qualified"
+  ],
+  "author": "Michel MARIANI",
+  "license": "MIT"
+}

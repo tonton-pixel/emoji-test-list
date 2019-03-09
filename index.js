@@ -4,7 +4,7 @@ const path = require ('path');
 //
 // https://www.unicode.org/reports/tr51/
 //
-// Copy of https://unicode.org/Public/emoji/11.0/emoji-test.txt
+// Copy of https://unicode.org/Public/emoji/12.0/emoji-test.txt
 //
 function getEmojiList ()
 {
@@ -14,7 +14,7 @@ function getEmojiList ()
     let relatedNonFullyQualified = [ ];
     for (let line of lines)
     {
-        if ((line) && (line[0] !== '#'))
+        if (line && (line[0] !== '#'))
         {
             let hashOffset = line.indexOf ('#');
             let data = line.substring (0, hashOffset);
@@ -36,7 +36,11 @@ function getEmojiList ()
                     code: fields[0].trim (),
                     name: comments[2],
                 };
-                if (status === "fully-qualified")
+                if (status === "component")
+                {
+                    result[emojiString].isComponent = true;
+                }
+                else if (status === "fully-qualified")
                 {
                     if (relatedNonFullyQualified.length > 0)
                     {
@@ -45,7 +49,7 @@ function getEmojiList ()
                     lastFullyQualified = emojiString;
                     relatedNonFullyQualified = [ ];
                 }
-                else if (status === "non-fully-qualified")
+                else if ((status === "minimally-qualified") || (status === "unqualified"))
                 {
                     if (comments[2] !== result[lastFullyQualified].name) console.log (`[${version}] Emoji mismatch:`, comments[2], result[lastFullyQualified].name);
                     result[emojiString].toFullyQualified = lastFullyQualified;

@@ -2,12 +2,7 @@
 
 ## Description
 
-This NPM module returns a JSON-compatible object literal containing all emoji characters with their code, name and link to other fully-qualified or non-fully-qualified forms, as extracted from the Unicode data file `emoji-test.txt`.
-
-Please note that the following emoji characters are omitted, as mentioned in the data file header:
-
-- 12 keycap bases: number sign '#', asterisk '*', digits '0' to '9'
-- 26 singleton regional indicators: '🇦' to '🇿'
+This Node module returns a JSON-compatible object literal containing all emoji characters with their code, name, and component status or link to other fully-qualified or non-fully-qualified (minimally-qualified or unqualified) forms, as extracted from the Unicode 12.0 data file `emoji-test.txt`.
 
 ## Installing
 
@@ -30,34 +25,47 @@ npm test
 ### Getting the total count of emoji
 
 ```javascript
-const emojiList = require ('emoji-test-list');
-console.log ("Total Emoji Count:", Object.keys (emojiList).length);
-// -> Total Emoji Count: 3570
+const emojiTestList = require ('emoji-test-list');
+console.log ("Total Emoji Count:", Object.keys (emojiTestList).length);
+// -> Total Emoji Count: 3836
 ```
 
 ### Getting the count of keyboard (fully-qualified) emoji
 
 ```javascript
-const emojiList = require ('emoji-test-list');
+const emojiTestList = require ('emoji-test-list');
 let keyboardCount = 0;
-for (let emoji in emojiList)
+for (let emoji in emojiTestList)
 {
-    if (!emojiList[emoji].toFullyQualified) keyboardCount++;
+    if (!emojiTestList[emoji].toFullyQualified) keyboardCount++;
 }
 console.log ("Keyboard Emoji Count:", keyboardCount);
-// -> "Keyboard Emoji Count: 2789
+// -> "Keyboard Emoji Count: 3010
+```
+
+### Getting the count of component emoji
+
+```javascript
+const emojiTestList = require ('emoji-test-list');
+let componentCount = 0;
+for (let emoji in emojiTestList)
+{
+    if (!emojiTestList[emoji].toFullyQualified) componentCount++;
+}
+console.log ("Component Emoji Count:", componentCount);
+// -> "Component Emoji Count: 9
 ```
 
 ### Getting the name and code(s) of a given emoji
 
 ```javascript
-const emojiList = require ('emoji-test-list');
+const emojiTestList = require ('emoji-test-list');
 const emoji = "👩‍❤️‍💋‍👨";
 console.log ("Emoji:", emoji);
 // -> Emoji: 👩‍❤️‍💋‍👨
-console.log ("Name:", emojiList[emoji].name);
+console.log ("Name:", emojiTestList[emoji].name);
 // -> Name: kiss: woman, man
-console.log ("Code:", emojiList[emoji].code);
+console.log ("Code:", emojiTestList[emoji].code);
 // -> Code: 1F469 200D 2764 FE0F 200D 1F48B 200D 1F468
 ```
 
@@ -65,4 +73,4 @@ console.log ("Code:", emojiList[emoji].code);
 
 The MIT License (MIT).
 
-Copyright © 2018 Michel MARIANI.
+Copyright © 2018-2019 Michel MARIANI.

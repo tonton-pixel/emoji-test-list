@@ -1,7 +1,7 @@
 {
   "name": "emoji-test-list",
-  "version": "11.0.0",
-  "description": "Get emoji list from Unicode test data file",
+  "version": "12.0.0",
+  "description": "Get emoji list from Unicode 12.0 test data file",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"
@@ -20,8 +20,11 @@
     "list",
     "code",
     "name",
+    "component",
     "fully-qualified",
-    "non-fully-qualified"
+    "non-fully-qualified",
+    "minimally-qualified",
+    "unqualified"
   ],
   "author": "Michel MARIANI",
   "license": "MIT"

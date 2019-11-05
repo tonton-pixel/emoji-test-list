@@ -2,7 +2,7 @@
 
 ## Description
 
-This Node module returns a JSON-compatible object literal containing all emoji characters with their code, name, and component status or link to other fully-qualified or non-fully-qualified (minimally-qualified or unqualified) forms, as extracted from the Unicode 12.0 data file `emoji-test.txt`.
+This Node module returns a JSON-compatible object literal containing all emoji characters with their code, age, name, and component status or link to other fully-qualified or non-fully-qualified (minimally-qualified or unqualified) forms, as extracted from the Emoji 12.1 data file `emoji-test.txt`.
 
 ## Installing
 
@@ -27,7 +27,7 @@ npm test
 ```javascript
 const emojiTestList = require ('emoji-test-list');
 console.log ("Total Emoji Count:", Object.keys (emojiTestList).length);
-// -> Total Emoji Count: 3836
+// -> Total Emoji Count: 4022
 ```
 
 ### Getting the count of keyboard (fully-qualified) emoji
@@ -40,7 +40,7 @@ for (let emoji in emojiTestList)
     if (!emojiTestList[emoji].toFullyQualified) keyboardCount++;
 }
 console.log ("Keyboard Emoji Count:", keyboardCount);
-// -> "Keyboard Emoji Count: 3010
+// -> "Keyboard Emoji Count: 3187
 ```
 
 ### Getting the count of component emoji
@@ -50,7 +50,7 @@ const emojiTestList = require ('emoji-test-list');
 let componentCount = 0;
 for (let emoji in emojiTestList)
 {
-    if (!emojiTestList[emoji].toFullyQualified) componentCount++;
+    if (emojiTestList[emoji].isComponent) componentCount++;
 }
 console.log ("Component Emoji Count:", componentCount);
 // -> "Component Emoji Count: 9

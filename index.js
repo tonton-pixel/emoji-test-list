@@ -4,7 +4,7 @@ const path = require ('path');
 //
 // https://www.unicode.org/reports/tr51/
 //
-// Copy of https://unicode.org/Public/emoji/12.0/emoji-test.txt
+// Copy of https://unicode.org/Public/emoji/12.1/emoji-test.txt
 //
 function getEmojiList ()
 {
@@ -27,14 +27,15 @@ function getEmojiList ()
             {
                 emojiString += String.fromCodePoint (parseInt (codePoint, 16));
             }
-            let comments = comment.trim ().match (/^([^\s]+)\s+(.*)$/);
+            let comments = comment.trim ().match (/^([^\s]+)\s+E([^\s]+)\s+(.*)$/);
             if (comments)
             {
                 if (comments[1] !== emojiString) console.log (`[${version}] Emoji mismatch:`, comments[1], emojiString);
                 result[emojiString] =
                 {
                     code: fields[0].trim (),
-                    name: comments[2],
+                    age: comments[2],
+                    name: comments[3]
                 };
                 if (status === "component")
                 {
@@ -51,7 +52,7 @@ function getEmojiList ()
                 }
                 else if ((status === "minimally-qualified") || (status === "unqualified"))
                 {
-                    if (comments[2] !== result[lastFullyQualified].name) console.log (`[${version}] Emoji mismatch:`, comments[2], result[lastFullyQualified].name);
+                    if (comments[3] !== result[lastFullyQualified].name) console.log (`[${version}] Emoji mismatch:`, comments[3], result[lastFullyQualified].name);
                     result[emojiString].toFullyQualified = lastFullyQualified;
                     relatedNonFullyQualified.push (emojiString);
                 }

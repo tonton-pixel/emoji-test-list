@@ -2,7 +2,7 @@
 
 ## Description
 
-This Node module returns a JSON-compatible object literal containing all emoji characters with their code, age, name, and component status or link to other fully-qualified or non-fully-qualified (minimally-qualified or unqualified) forms, as extracted from the Emoji 12.1 data file `emoji-test.txt`.
+This Node module returns a JSON-compatible object literal containing all emoji characters with their code, age, name, and component status or link to other fully-qualified or non-fully-qualified (minimally-qualified or unqualified) forms, as extracted from the Emoji 13.0 data file [emoji-test.txt](https://unicode.org/Public/emoji/13.0/emoji-test.txt).
 
 ## Installing
 
@@ -73,4 +73,4 @@ console.log ("Code:", emojiTestList[emoji].code);
 
 The MIT License (MIT).
 
-Copyright © 2018-2019 Michel MARIANI.
+Copyright © 2018-2020 Michel MARIANI.

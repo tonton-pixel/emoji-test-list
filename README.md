@@ -27,7 +27,7 @@ npm test
 ```javascript
 const emojiTestList = require ('emoji-test-list');
 console.log ("Total Emoji Count:", Object.keys (emojiTestList).length);
-// -> Total Emoji Count: 4022
+// -> Total Emoji Count: 4168
 ```
 
 ### Getting the count of keyboard (fully-qualified) emoji
@@ -40,7 +40,7 @@ for (let emoji in emojiTestList)
     if (!emojiTestList[emoji].toFullyQualified) keyboardCount++;
 }
 console.log ("Keyboard Emoji Count:", keyboardCount);
-// -> "Keyboard Emoji Count: 3187
+// -> "Keyboard Emoji Count: 3295
 ```
 
 ### Getting the count of component emoji

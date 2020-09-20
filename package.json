@@ -1,7 +1,7 @@
 {
   "name": "emoji-test-list",
-  "version": "13.0.0",
-  "description": "Get emoji list from Emoji 13.0 test data file",
+  "version": "13.1.0",
+  "description": "Get emoji list from Emoji 13.1 test data file",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"
